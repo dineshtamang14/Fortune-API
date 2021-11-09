@@ -1,18 +1,14 @@
-const http = require("http");
+const express = require("express");
+const app = express();
 
 const hostname = "localhost";
 const port = 3000;
 
-const server = http.createServer((req, res)=>{
-    const {url} = req;
-
-    if(url === "/trans"){
-        res.setHeader("content-type", "application/json");
-        res.write("hello there");
-    } 
-});
+app.get("/", (req, res)=>{
+    res.send("hello, world");
+})
 
 
-server.listen(port, hostname, ()=>{
+app.listen(port, hostname, ()=>{
     console.log(`server is running ${hostname}:${port}`);
 })
