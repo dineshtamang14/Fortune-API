@@ -6,11 +6,11 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
 
-app.get("/fortunes", (req, res)=>{
+app.get("/", (req, res)=>{
     res.json(fortunes);
 });
 
-app.get("/fortunes/random", (req, res)=>{
+app.get("/random", (req, res)=>{
     res.json(fortunes[Math.floor(Math.random() * fortunes.length)]);
 });
 
